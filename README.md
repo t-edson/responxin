@@ -29,15 +29,15 @@ Mixins divide screen resolution in 3 or 4 sizes.
 
 Mixins for 3 sizes are:
 
- if_screen3_small
- if_screen3_medium
- if_screen3_large
+*if_screen3_small
+*if_screen3_medium
+*if_screen3_large
 
 Mixins for 4 sizes are:
 
- if_screen4_tiny
- if_screen4_small
- if_screen4_medium
- if_screen4_large
+*if_screen4_tiny
+*if_screen4_small
+*if_screen4_medium
+*if_screen4_large
 
 
