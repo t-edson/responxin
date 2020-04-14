@@ -35,9 +35,9 @@ Mixins for 3 sizes are:
 
 Mixins for 4 sizes are:
 
-*if_screen4_tiny
-*if_screen4_small
-*if_screen4_medium
-*if_screen4_large
+* if_screen4_tiny
+* if_screen4_small
+* if_screen4_medium
+* if_screen4_large
 
 
