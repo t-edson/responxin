@@ -1,0 +1,83 @@
+/************************************************************/
+//#region: DISEÑO ADAPTABLE
+/************************************************************/
+//Mixin para manejo del Responsive en 3 tamaños
+$ruptura1_3t: 650px;
+$ruptura2_3t: 1000px;
+@mixin si_3t_pantalla_chica { //<ruptura1
+  @media (max-width: #{$ruptura1_3t - 1px}) {
+    @content;
+  }
+}
+@mixin si_3t_pantalla_mediana {  //>=ruptura1, <ruptura2
+  @media (min-width: #{$ruptura1_3t}) and (max-width: #{$ruptura2_3t - 1px}) {
+    @content;
+  }
+}
+@mixin si_3t_pantalla_grande {  //>=ruptura2
+  @media (min-width: #{$ruptura2_3t}) {
+    @content;
+  }
+}
+//Mixin para manejo del Responsive en 4 tamaños
+$ruptura1_4t: 600px;
+$ruptura2_4t: 900px;
+$ruptura3_4t: 1100px;
+@mixin si_4t_pantalla_muychica { //<ruptura1
+  @media (max-width: #{$ruptura1_4t - 1px}) {
+    @content;
+  }
+}
+@mixin si_4t_pantalla_chica {  //>=ruptura1, <ruptura2
+  @media (min-width: #{$ruptura1_4t}) and (max-width: #{$ruptura2_4t - 1px}) {
+    @content;
+  }
+}
+@mixin si_4t_pantalla_mediana {  //>=ruptura2, <ruptura3
+  //  @media only screen and (min-width: 600px) {
+  @media (min-width: #{$ruptura2_4t}) and (max-width: #{$ruptura3_4t - 1px}) {
+    @content;
+  }
+}
+@mixin si_4t_pantalla_grande {  //>=ruptura3
+  @media (min-width: #{$ruptura3_4t}) {
+    @content;
+  }
+}
+/* Mixins para usarse dentro del mixin "limite_hor". */
+$resolut_bp1: 900px;
+$resolut_bp2: 1250px; 
+$resolut_bp2_noHbar: $resolut_bp2 - 50px; //Ancho de pantalla sin barra de desplazamiento  (Cuidado con los espacios).
+@mixin if_resolut_small { //<ruptura1
+  @media (max-width: #{$resolut_bp1 - 1px}) {
+    @content;
+  }}
+@mixin if_resolut_normal {  //>=ruptura1, <ruptura2
+  @media (min-width: #{$resolut_bp1}) and (max-width: #{$resolut_bp2 - 1px}) {
+    @content;
+  }}
+@mixin if_resolut_exceed {  //>=ruptura2
+  @media (min-width: #{$resolut_bp2}) {
+    @content;
+  }}
+/* Límite para el ancho horizontal del contenido, 
+trabajando sobre los márgenes. */
+@mixin limite_hor { //Versión mixing
+  @include if_resolut_small {
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+  }  
+  @include if_resolut_normal {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }  
+  @include if_resolut_exceed {
+    width : $resolut_bp2_noHbar;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.limit_hor {  //Versión clase
+  @include limite_hor;
+}
+//#endregion
