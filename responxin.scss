@@ -2,45 +2,45 @@
 //#region: DISEÑO ADAPTABLE
 /************************************************************/
 //Mixin para manejo del Responsive en 3 tamaños
-$ruptura1_3t: 650px;
-$ruptura2_3t: 1000px;
-@mixin si_3t_pantalla_chica { //<ruptura1
-  @media (max-width: #{$ruptura1_3t - 1px}) {
+$screen3_bp1: 650px;
+$screen3_bp2: 1000px;
+@mixin if_screen3_small { //<ruptura1
+  @media (max-width: #{$screen3_bp1 - 1px}) {
     @content;
   }
 }
-@mixin si_3t_pantalla_mediana {  //>=ruptura1, <ruptura2
-  @media (min-width: #{$ruptura1_3t}) and (max-width: #{$ruptura2_3t - 1px}) {
+@mixin if_screen3_medium {  //>=ruptura1, <ruptura2
+  @media (min-width: #{$screen3_bp1}) and (max-width: #{$screen3_bp2 - 1px}) {
     @content;
   }
 }
-@mixin si_3t_pantalla_grande {  //>=ruptura2
-  @media (min-width: #{$ruptura2_3t}) {
+@mixin if_screen3_large {  //>=ruptura2
+  @media (min-width: #{$screen3_bp2}) {
     @content;
   }
 }
 //Mixin para manejo del Responsive en 4 tamaños
-$ruptura1_4t: 600px;
-$ruptura2_4t: 900px;
-$ruptura3_4t: 1100px;
-@mixin si_4t_pantalla_muychica { //<ruptura1
-  @media (max-width: #{$ruptura1_4t - 1px}) {
+$screen4_bp1: 600px;
+$screen4_bp2: 900px;
+$screen4_bp3: 1100px;
+@mixin if_screen4_tiny { //<ruptura1
+  @media (max-width: #{$screen4_bp1 - 1px}) {
     @content;
   }
 }
-@mixin si_4t_pantalla_chica {  //>=ruptura1, <ruptura2
-  @media (min-width: #{$ruptura1_4t}) and (max-width: #{$ruptura2_4t - 1px}) {
+@mixin if_screen4_small {  //>=ruptura1, <ruptura2
+  @media (min-width: #{$screen4_bp1}) and (max-width: #{$screen4_bp2 - 1px}) {
     @content;
   }
 }
-@mixin si_4t_pantalla_mediana {  //>=ruptura2, <ruptura3
+@mixin if_screen4_medium {  //>=ruptura2, <ruptura3
   //  @media only screen and (min-width: 600px) {
-  @media (min-width: #{$ruptura2_4t}) and (max-width: #{$ruptura3_4t - 1px}) {
+  @media (min-width: #{$screen4_bp2}) and (max-width: #{$screen4_bp3 - 1px}) {
     @content;
   }
 }
-@mixin si_4t_pantalla_grande {  //>=ruptura3
-  @media (min-width: #{$ruptura3_4t}) {
+@mixin if_screen4_large {  //>=ruptura3
+  @media (min-width: #{$screen4_bp3}) {
     @content;
   }
 }
